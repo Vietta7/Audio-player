@@ -1,0 +1,18 @@
+@import "./../fonts/stylesheet.css";
+
+// Base
+
+@import "./base/vars";
+@import "./base/base";
+
+
+// Blocks 
+
+@import "./blocks/header";
+@import "./blocks/about";
+@import "./blocks/friends";
+@import "./blocks/cards";
+@import "./blocks/help";
+@import "./blocks/donation";
+@import "./blocks/footer";
+@import "./blocks/pets";
