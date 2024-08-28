@@ -1,6 +1,8 @@
 // friends 
 
 .friends {
+    display: flex;
+    align-items: center;
     padding-top: 67px;
     padding-bottom: 100px;
     background-color: var(--color-light-s);
@@ -35,116 +37,39 @@
     }
 }
 
-.friends-slider-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-bottom: 58px;
-
-    @include tablet () {
-        padding-right: 64px;
-        padding-left: 64px;
-    }
-
-    @include mobile () {
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 0;
-    }
-
-    @include mobile-m() {
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 110px;
-    }
-}
-
-.friends-slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
 .primary-center {
     margin: 0 auto;
     width: 261px;
+    margin-top: 40px;
 }
 
-.cards {
+.friends-cards-slider {
     display: flex;
-    column-gap: 90px;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    overflow: hidden;
 
-    @include tablet () {
-        flex-wrap: nowrap;
-        gap: 56px;
-        max-width: 100%;
-        justify-content: center;
+    @include desktop() {
+        gap: 40px;
     }
 }
 
-.card {
-    width: 270px;
-    height: 435px;
-    background-color: var(--color-light-s);
-    cursor: pointer;
-    border-radius: 9px;
-    transition: 0.4s;
-    
-    &:hover {
-        background-color: var(--color-light-xl);
-        transition: 0.4s;
-        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);  
-    }   
-
-    &:hover .button-card {
-        transition: 0.4s;
-        background-color: var(--color-primary-light);
-        border: 2px solid var(--color-primary-light);
-    }
+.friends-slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
-
-
-.card-photo {
-    border-radius: 9px 9px 0 0;
-    width: 270px;
-    height: 270px;
-}
-
-.card-title {
-    padding: 30px 0;
-    text-align: center;
-    color: var(--color-dark-l);
-    font-family: var(--font-main);
-    font-size: 20px;
-    letter-spacing: 1.2px;
-}
-
-.button-card {
-    display: block;
-    width: 187px;
-    height: 52px;
-    text-align: center;
-    border: 2px solid var(--color-primary);
-    border-radius: 100px;
-    margin: 0 auto;
-    font-family: var(--font-main);
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: var(--color-dark-3xl);
-
-    &:hover {
-        transition: 0.4s;
-        background-color: var(--color-primary-light);
-        border: 2px solid var(--color-primary-light);
-    }
+.friend-card {
+    box-sizing: border-box;
+    padding: 10px;
+    min-width: 270px;
 }
 
 .slider__btn {
+    transform: translateY(-50%);
+    top: 50%;
     width: 52px;
     height: 52px;
     padding-left: 19px;
@@ -161,88 +86,36 @@
         background-color: var(--color-primary-light);
         border: 2px solid var(--color-primary-light);
     }
-
-    @include tablet () {
-        position: absolute;
-        width: 52px;
-        height: 52px;
-        padding-left: 17px;
-        padding-right: 17px;
-        padding-top: 21px;
-        padding-bottom: 23px;
-    }
 }
 
-.slider__btn--prev {
-    left: -25px;
+.slider__btn-prev {
+    left: 20px; 
+}
+ 
+.slider__btn-next {
+    right: 20px;
+}
 
-    @include tablet () {
-        left: -10px;
+.button-container {
+    position: absolute;
+    top: 44%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile-m () {
+        position: static;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 30px;
     }
 
     @include mobile () {
-        left: 57px;
-        top: 83%;
-    }
-
-    @include mobile-m () {
-        left: 57px;
-        top: 83%;
-    }
-}
-
-.slider__btn--next {
-    right: -25px;
-
-    @include tablet () {
-        right: -10px;
-    }
-
-    @include mobile () {
-        right: 57px;
-        top: 83%;
-    }
-
-    @include mobile-m () {
-        right: 57px;
-        top: 83%;
-    }
-
-}
-
-.card:nth-child(n+3) {
-    @include desktop-special-s () {
-        display: none;
-    }
-
-    @include tablet () {
-        display: none;
-    }
-
-    @include desktop-s () {
-        display: none;
-    }
-
-    @include mobile () {
-        display: none;
-    }
-
-    @include mobile-m () {
-        display: none;
-    }
-}
-
-.card:nth-child(n+2) {
-
-    @include tablet-s () {
-        display: none;
-    }
-
-    @include mobile () {
-        display: none;
-    }
-
-    @include mobile-m () {
-        display: none;
+        position: static;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 30px;
     }
 }
