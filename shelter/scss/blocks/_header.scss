@@ -6,9 +6,17 @@
                 radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
     background-repeat: repeat, no-repeat;
     background-size: auto, auto 908px;
+
+    overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 
-.header--header-pets {
+.header-pets {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -69,6 +77,44 @@
     padding-top: 9px;
 }
 
+.nav {
+    @include tablet-s() {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        max-width: 320px;
+        width: 100%;
+        max-height: 823px;
+        height: 100%;
+        background-color: var(--color-dark-3xl);
+        visibility: hidden;
+        z-index: 2;
+        transition: right 0.7s ease, visibility 0s 0.7s;
+    }
+}
+
+.nav-pets {
+    @include tablet-s() {
+        background-color: var(--color-light-s);
+    }
+}
+
+.header.open .nav {
+    @include tablet-s() {
+        visibility: visible;
+        right: 0;
+        transition: right 0.7s ease, visibility 0s;
+    }
+}
+
+body.open .nav {
+    @include tablet-s() {
+        visibility: visible;
+        right: 0;
+        transition: right .7s;
+    }
+}
+
 .nav-list {
     margin-left: auto;
     display: flex;
@@ -78,11 +124,18 @@
     padding-top: 5px;
     padding-bottom: 8px;
 
-    @include tablet-s () {
-        display: none;
+    @include tablet-s() {
+        display: block;
+        text-align: center;
+        padding-top: 158px;
     }
 }
 
+.nav-list li {
+    @include tablet-s() {
+        margin-bottom: 40px;
+    }
+}
 
 .nav-link {
     font-family: var(--font-cards);
@@ -94,10 +147,16 @@
     &:hover {
         color: var(--color-light-s); 
     }
+
+    @include tablet-s() {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 160%;
+    }
 }
 
 
-.nav-link--pets {
+.nav-link-pets {
     font-family: var(--font-cards);
     font-size: 15px;
     line-height: 160%;
@@ -107,7 +166,15 @@
     &:hover {
         color: var(--color-dark-3xl); 
     }
+
+    @include tablet-s() {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 160%;
+        color: var(--color-dark-3xl); 
+    }
 }
+
 
 .nav-link:active {
     position: relative;
@@ -146,6 +213,10 @@
     height: 2px;
     left: 0;
     bottom: -7px;
+    }
+
+    @include tablet () {
+        color: var(--color-dark-3xl); 
     }
 }
 

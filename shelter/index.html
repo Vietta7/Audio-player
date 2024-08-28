@@ -14,18 +14,18 @@
             <div class="logo">
                 <a href="#no_scroll" class="logo-title">Cozy House<p class="logo-text">Shelter for pets in Boston</p></a>
             </div>
-            <div class="nav">
+            <button class="burger-menu" id="burger-menu">
+                <div class="burger-bar"></div>
+                <div class="burger-bar"></div>
+                <div class="burger-bar"></div>
+            </button>
+            <div class="nav" id="nav">
                 <ul class="nav-list">
                     <li><a class="nav-link link-active" href="#no_scroll">About the shelter</a></li>
                     <li><a class="nav-link" href="pets.html">Our pets</a></li>
                     <li><a class="nav-link" href="#help">Help the shelter</a></li>
                     <li><a class="nav-link" href="#contacts">Contacts</a></li>
                 </ul> 
-            </div>
-            <div class="burger-menu">
-                <div class="burger-bar"></div>
-                <div class="burger-bar"></div>
-                <div class="burger-bar"></div>
             </div>
         </div>
         <!-- header-content -->
@@ -52,6 +52,7 @@
                 </div>
             </section>
         </div>
+        <div class="overlay" id="overlay"></div>
     </header>
     <!-- about -->
     <div class="about" id="about" >
@@ -80,35 +81,20 @@
     <section class="friends" id="friends">
         <div class="container">
             <h2 class="our-friends__title">Our friends who <br> are looking for a house</h2>
-            <div class="friends-slider-wrapper">
-                <button class="slider__btn slider__btn--prev">
-                    <img src="./img/icons/slider/slider-left.svg" alt="Previous">
-                </button>
-                <div class="friends-slider">
-                    <div class="cards">
-                        <div class="card">
-                            <img class="card-photo" src="./img/friends/pets-katrine.png" alt="Katrine">
-                            <h4 class="card-title">Katrine</h4>
-                            <button class="button-card">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img class="card-photo" src="./img/friends/pets-jennifer.png" alt="Jennifer">
-                            <h4 class="card-title">Jennifer</h4>
-                            <button class="button-card">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img class="card-photo" src="./img/friends/pets-woody.png" alt="Woody">
-                            <h4 class="card-title">Woody</h4>
-                            <button class="button-card">Learn more</button>
-                        </div>
-                    </div>
+            <div class="friends-slider-wrapper"> 
+                <div class="friends-cards-slider">
                 </div>
-                <button class="slider__btn slider__btn--next">
-                    <img src="./img/icons/slider/slider-right.svg" alt="Next">
-                </button>
+                <div class="button-container">
+                    <button class="slider__btn slider__btn-prev">
+                        <img src="./img/icons/slider/slider-left.svg" alt="Previous">
+                    </button>
+                    <button class="slider__btn slider__btn-next">
+                        <img src="./img/icons/slider/slider-right.svg" alt="Next">
+                    </button>
+                </div>
             </div>
+            <a href="pets.html" class="button-primary primary-center">Get to know the rest</a>
         </div>
-        <a href="pets.html" class="button-primary primary-center">Get to know the rest</a>
     </section>
     <!-- help -->
     <section class="help" id="help">
@@ -218,7 +204,9 @@
             </section> 
         </div>
     </footer>
+    <!-- Modal -->
+    <div id="modals-container"></div>
     <!-- JS -->
-     <script src="index.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
