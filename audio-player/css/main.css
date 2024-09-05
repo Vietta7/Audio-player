@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --text-color: #FFF;
 }
@@ -113,6 +114,138 @@ body {
   bottom: 0;
   filter: blur(0.438rem);
   z-index: -1;
+}
+
+.player-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background: linear-gradient(to right, rgba(211, 211, 211, 0.8), rgba(255, 255, 255, 0.8));
+  min-width: 21.25rem;
+  height: 46.875rem;
+  width: 25.625rem;
+  position: absolute;
+  margin: 2.5rem auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 0.625rem #000000;
+}
+
+.covers {
+  width: 100%;
+  height: 27.68rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.875rem;
+  min-height: 21.25rem;
+}
+
+.cover {
+  background-image: url("../img/img1-340.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  background-blend-mode: multiply;
+  box-shadow: 0 0 0.625rem #000000;
+}
+
+.like {
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+}
+
+.like-heart {
+  fill: currentColor;
+  transition: all 0.3s ease;
+}
+
+.like:hover .like-heart {
+  color: rgb(227, 7, 7);
+}
+
+/* пульсация сердечка */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.like-heart {
+  fill: currentColor;
+  animation: pulse 1.3s infinite;
+}
+
+.like:hover .like-heart {
+  color: rgb(227, 7, 7);
+  animation: none;
+}
+
+.song-name {
+  display: flex;
+  position: relative;
+}
+
+.song-title {
+  letter-spacing: 0.078rem;
+  font-size: 1.25rem;
+  color: black;
+}
+
+.management {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding-top: 1rem;
+}
+
+.sound-on {
+  width: 1.9rem;
+  height: 1.9rem;
+  cursor: pointer;
+}
+
+#volume {
+  appearance: none;
+  height: 0.625rem;
+  background: #9e8d8d;
+  border-radius: 0.313rem;
+  outline: none;
+  transition: background 0.3s;
+}
+
+#volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  background: #0d0d0d;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#volume:hover {
+  background: #7a7474;
+}
+
+#volume:active::-webkit-slider-thumb {
+  background: #dae0e0;
 }
 
 .footer {

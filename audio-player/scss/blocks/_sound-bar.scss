@@ -1,0 +1,55 @@
+.song-name {
+    display: flex;
+    position: relative;
+}
+
+.song-title {
+    letter-spacing: 0.078rem;
+    font-size: 1.25rem;
+    color: black;
+}
+
+.management {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding-top: 1rem;
+}
+
+.sound-on {
+    width: 1.900rem;
+    height: 1.900rem;
+    cursor: pointer;
+}
+
+#volume {
+    appearance: none;
+    height: 0.625rem;
+    background: #9e8d8d;
+    border-radius: 0.313rem;
+    outline: none;
+    transition: background 0.3s;
+}
+  
+  #volume::-webkit-slider-thumb {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background: #0d0d0d;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  
+  #volume:hover {
+    background: #7a7474;
+  }
+  
+
+  #volume:active::-webkit-slider-thumb {
+    background: #dae0e0; 
+  }
+  
+

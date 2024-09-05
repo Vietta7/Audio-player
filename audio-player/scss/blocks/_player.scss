@@ -1,0 +1,41 @@
+.player-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background: linear-gradient(to right, rgba(211, 211, 211, 0.8), rgba(255, 255, 255, 0.8));
+    min-width: 21.25rem;
+    height: 46.875rem;
+    width: 25.625rem;
+
+    position: absolute;
+    margin: 2.5rem auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.625rem #000000;
+}
+
+.covers {
+    width: 100%;
+    height: 27.68rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.875rem;
+    min-height: 21.25rem;
+}
+
+.cover {
+    background-image: url('../img/img1-340.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    background-blend-mode: multiply;
+    box-shadow: 0 0 0.625rem #000000;
+}
+
