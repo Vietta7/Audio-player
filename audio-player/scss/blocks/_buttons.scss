@@ -1,0 +1,21 @@
+.buttons {
+    display: flex;
+    gap: 3rem;
+    padding-top: 3rem;
+}
+
+.btn {
+    width: 4.125rem;
+    fill: currentColor; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.player-btn {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn:hover .player-btn {
+    filter: invert(48%) sepia(9%) saturate(300%) hue-rotate(0deg) brightness(92%) contrast(89%);
+}
