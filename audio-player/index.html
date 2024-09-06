@@ -12,6 +12,7 @@
 </head>
 <body>
     <img src="./img/img1.jpg" alt="background-image" id="background-image">
+    <audio src="./music/Ishome-ken tavr.mp3" id="music"></audio>
 
     <!-- main -->
     <main>
@@ -20,7 +21,7 @@
                 <div class="cover"></div>
            </div> 
            <div class="song-name">
-                <div class="song-title">Ishome - Ken Tavr</div>
+                <div class="song-title" id="title">Ishome - Ken Tavr</div>
             </div>
            <div class="management"> 
                 <div class="like">
@@ -30,14 +31,14 @@
                     0 5.05234V5.24264C0 6.36786 0.44699 7.44699 1.24264 8.24264Z" fill="currentColor"/>
                     </svg>
                 </div>
-                <div class="sound-on">
-                    <img src="./img/icon/volume-up.png" alt="sound-on">
+                <div class="sound-on" id="sound-toggle">
+                    <img id="volume-icon" src="./img/icon/volume-up.png" alt="sound-on">
                 </div>
                 <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2">
            </div>
            <div class="buttons">
                 <button class="btn"><img class="player-btn" src="./img/icon/prev.svg" alt="back-btn"></button>
-                <button class="btn btn-on"><img class="player-btn" src="./img/icon/play.svg" alt="play"></button>
+                <button class="btn btn-on" id="play-pause-btn"><img class="player-btn" src="./img/icon/play.svg" alt="play"></button>
                 <button class="btn"><img class="player-btn" src="./img/icon/next.svg" alt="next"></button>
            </div>
            <div class="music-bar">
@@ -65,5 +66,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- script -->
+     <script src="./js/main.js"></script>
 </body>
 </html>
