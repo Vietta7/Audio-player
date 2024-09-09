@@ -24,6 +24,10 @@ playPauseBtn.addEventListener('click', function() {
     }
 });
 
+audio.addEventListener('ended', function() {
+    playPauseIcon.src = './img/icon/play.svg'; 
+    playPauseIcon.alt = 'play'; 
+});
 
 // Управление звуком
 
