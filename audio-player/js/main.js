@@ -53,3 +53,28 @@ soundToggle.addEventListener('click', function() {
     }
     isMuted = !isMuted; 
 });
+
+
+// Управление временем :)
+
+const currentTimeElement = document.getElementById('current-time');
+const totalTimeElement = document.getElementById('total-time');
+const seekbar = document.getElementById('bar');
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+audio.addEventListener('loadedmetadata', function() {
+    totalTimeElement.textContent = formatTime(audio.duration);
+    seekbar.max = Math.floor(audio.duration);
+});
+audio.addEventListener('timeupdate', function() {
+    currentTimeElement.textContent = formatTime(audio.currentTime);
+    seekbar.value = Math.floor(audio.currentTime);
+});
+
+// Перемотка трека 
+seekbar.addEventListener('input', function() {
+    audio.currentTime = seekbar.value; 
+});
