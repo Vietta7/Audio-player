@@ -24,10 +24,6 @@ playPauseBtn.addEventListener('click', function() {
     }
 });
 
-audio.addEventListener('ended', function() {
-    playPauseIcon.src = './img/icon/play.svg'; 
-    playPauseIcon.alt = 'play'; 
-});
 
 // Управление звуком
 
@@ -48,12 +44,12 @@ soundToggle.addEventListener('click', function() {
         audio.muted = false;
         volumeIcon.src = './img/icon/volume-up.png';
         volumeIcon.alt = 'sound-on';
-        alert('Звук включен');
+        //alert('Звук включен');
     } else {
         audio.muted = true;
         volumeIcon.src = './img/icon/sound-off.png';
         volumeIcon.alt = 'sound-off';
-        alert('Звук выключен');
+        //alert('Звук выключен');
     }
     isMuted = !isMuted; 
 });
@@ -78,7 +74,81 @@ audio.addEventListener('timeupdate', function() {
     seekbar.value = Math.floor(audio.currentTime);
 });
 
+
 // Перемотка трека 
 seekbar.addEventListener('input', function() {
     audio.currentTime = seekbar.value; 
+});
+
+
+// Загрузка треков из массива и переключение их
+
+const tracks = [
+    {
+        title: 'Ishome - Ken Tavr',
+        cover: './img/img1-340.jpg',
+        background: './img/img1.jpg',
+        src: './music/Ishome-ken tavr.mp3'
+    },
+    {
+        title: 'Michael Kiwanuka - Love & Hate',
+        cover: './img/img2-340.jpg',
+        background: './img/img2.jpg',
+        src: './music/Michael Kiwanuka - Love & Hate.mp3'
+    },
+    {
+        title: 'Pixies - Where Is My Mind',
+        cover: './img/img3-340.jpg',
+        background: './img/img3.jpg',
+        src: './music/Pixies - Where Is My Mind.mp3'
+    }
+];
+
+let trackIndex = 0;
+
+const titleAudio = document.getElementById('title');
+const coverElement = document.querySelector('.cover');
+const backgroundAudio = document.getElementById('background-image');
+
+function loadTrack(index) {
+    const track = tracks[index];
+    const wasPlaying = !audio.paused; 
+
+    audio.src = track.src;
+    titleAudio.textContent = track.title;
+    coverElement.style.backgroundImage = `url(${track.cover})`;
+    backgroundAudio.src = track.background;
+
+    if (wasPlaying) {
+        audio.play();
+        playPauseIcon.src = './img/icon/pause.svg';
+        playPauseIcon.alt = 'pause';
+    } else {
+        audio.pause();
+        playPauseIcon.src = './img/icon/play.svg';
+        playPauseIcon.alt = 'play';
+    }
+}
+
+loadTrack(trackIndex);
+
+function prevTrack() {
+    trackIndex = (trackIndex - 1 + tracks.length) % tracks.length;
+    loadTrack(trackIndex);
+}
+
+function nextTrack() {
+    trackIndex = (trackIndex + 1) % tracks.length;
+    loadTrack(trackIndex);
+}
+
+document.getElementById('prev').addEventListener('click', prevTrack);
+document.getElementById('next').addEventListener('click', nextTrack);
+
+
+audio.addEventListener('ended', function() {
+    nextTrack();
+    audio.play();
+    playPauseIcon.src = './img/icon/pause.svg';
+    playPauseIcon.alt = 'pause';
 });
